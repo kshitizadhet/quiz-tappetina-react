@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --config webpack.config.dev.js --open",
     "build": "webpack --mode production --config webpack.config.prod.js --progress",
-    "heroku-prebuild": "npm install webpack-dev-server --save-dev"
+    "heroku-postbuild": "npm start"
   },
   "repository": "kshitizadhet/quiz-tappetina-react",
   "homepage": "https://github.com/kshitizadhet/quiz-tappetina-react",
