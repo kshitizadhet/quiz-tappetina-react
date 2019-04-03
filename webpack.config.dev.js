@@ -41,6 +41,7 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist',
+        inline: false,
         hot: true
     },
     plugins: [

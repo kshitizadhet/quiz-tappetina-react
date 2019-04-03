@@ -4,9 +4,8 @@
   "description": "A quiz built with React.",
   "main": "main.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --config webpack.config.dev.js --open",
-    "dev": "webpack-dev-server",
-    "build": "webpack --mode production --config webpack.config.prod.js --progress"
+    "start": "webpack-dev-server --config webpack.config.dev.js --open",
+    "build": "webpack --config webpack.config.prod.js -p"
   },
   "repository": "kshitizadhet/quiz-tappetina-react",
   "homepage": "https://github.com/kshitizadhet/quiz-tappetina-react",
