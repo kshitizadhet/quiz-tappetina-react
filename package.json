@@ -6,7 +6,6 @@
   "scripts": {
     "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
     "start": "webpack-dev-server --config webpack.config.dev.js --open",
-    "build": "webpack --config webpack.config.prod.js -p",
     "webpack": "node_modules/.bin/webpack --config ./react/webpack.config.js"
   },
   "repository": "kshitizadhet/quiz-tappetina-react",
@@ -43,6 +42,7 @@
   ],
   "dependencies": {
     "avataaars": "^1.2.1",
+    "build": "^0.1.4",
     "react-youtube": "^7.9.0"
   }
 }
