@@ -4,8 +4,10 @@
   "description": "A quiz built with React.",
   "main": "main.js",
   "scripts": {
+    "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
     "start": "webpack-dev-server --config webpack.config.dev.js --open",
-    "build": "webpack --config webpack.config.prod.js -p"
+    "build": "webpack --config webpack.config.prod.js -p",
+    "webpack": "node_modules/.bin/webpack --config ./react/webpack.config.js"
   },
   "repository": "kshitizadhet/quiz-tappetina-react",
   "homepage": "https://github.com/kshitizadhet/quiz-tappetina-react",
