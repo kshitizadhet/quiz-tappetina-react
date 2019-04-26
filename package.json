@@ -9,8 +9,8 @@
   },
   "scripts": {
     "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
-    "start": "webpack-dev-server --config webpack.config.dev.js --open",
-    "webpack": "node_modules/.bin/webpack --config webpack.config.dev.js"
+    "start": "webpack-dev-server --config webpack.config.prod.js --open",
+    "webpack": "node_modules/.bin/webpack --config webpack.config.prod.js"
   },
   "repository": "kshitizadhet/quiz-tappetina-react",
   "homepage": "https://github.com/kshitizadhet/quiz-tappetina-react",
