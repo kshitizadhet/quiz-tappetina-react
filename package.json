@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A quiz built with React.",
   "main": "main.js",
+  "engines": {
+    "node": "10.15.1"
+  },
   "scripts": {
     "heroku-postbuild": "NODE_ENV=production npm run webpack -- -p",
     "start": "webpack-dev-server --config webpack.config.dev.js --open",
