@@ -5,6 +5,8 @@ import Modal from './Modal';
 import Results from './Results';
 import shuffleQuestions from '../helpers/shuffleQuestions';
 import QUESTION_DATA from '../data/quiz-data';
+import QUESTION_DATA_2 from '../data/quiz-data-2';
+import VIDEO_DATA from '../data/videoIdData';
 
 class QuizApp extends Component {
     state = {
@@ -12,7 +14,8 @@ class QuizApp extends Component {
     };
 
     static propTypes = {
-        totalQuestions: PropTypes.number.isRequired
+        totalQuestions: PropTypes.number.isRequired,
+        videoId: PropTypes.array.isRequired
     };
 
     getInitialState(totalQuestions) {
@@ -22,6 +25,31 @@ class QuizApp extends Component {
         return {
             questions: QUESTIONS,
             totalQuestions: totalQuestions,
+            userAnswers: QUESTIONS.map(() => {
+                return {
+                    tries: 0
+                }
+            }),
+            videoId: VIDEO_DATA[0].toString(),
+            step: 1,
+            score: 0,
+            modal: {
+                state: 'hide',
+                praise: '',
+                points: ''
+            }
+        };
+    }
+
+
+    gotoNextState(totalQuestions) {
+        totalQuestions = Math.min(totalQuestions, QUESTION_DATA_2.length);
+        const QUESTIONS = shuffleQuestions(QUESTION_DATA_2).slice(0, totalQuestions);
+
+        return {
+            questions: QUESTIONS,
+            totalQuestions: totalQuestions,
+            videoId: VIDEO_DATA[1].toString(),
             userAnswers: QUESTIONS.map(() => {
                 return {
                     tries: 0
@@ -144,21 +172,45 @@ class QuizApp extends Component {
 
     restartQuiz = () => {
         this.setState({
-            ...this.getInitialState(this.props.totalQuestions)
+            ...this.getInitialState(this.props.totalQuestions),
+
+        });
+    };
+
+    nextQuiz = () => {
+        this.setState({
+           ...this.gotoNextState(this.props.totalQuestions),
+
         });
     };
 
     render() {
-        const { step, questions, userAnswers, totalQuestions, score, modal } = this.state;
+        const { step, questions, userAnswers, totalQuestions, score, modal, videoId } = this.state;
 
         if (step >= totalQuestions + 1) {
-            return (
-                <Results
-                    score={score}
-                    restartQuiz={this.restartQuiz}
-                    userAnswers={userAnswers}
-                />
-            );
+
+            if (videoId === VIDEO_DATA[0].toString()) {
+                return (
+                    <Results
+                        score={score}
+                        nextQuiz={this.nextQuiz}
+                        userAnswers={userAnswers}
+                        restartQuiz={this.restartQuiz}
+                        flag={0}
+                    />
+                );
+            }
+            else if (videoId === VIDEO_DATA[1].toString()) {
+                return (
+                    <Results
+                        score={score}
+                        nextQuiz={this.nextQuiz}
+                        userAnswers={userAnswers}
+                        restartQuiz={this.restartQuiz}
+                        flag={1}
+                    />
+                );
+            }
         } else return (
             <Fragment>
                 <Quiz
@@ -166,6 +218,7 @@ class QuizApp extends Component {
                     questions={questions}
                     totalQuestions={totalQuestions}
                     score={score}
+                    videoId={videoId}
                     handleAnswerClick={this.handleAnswerClick}
                     handleEnterPress={this.handleEnterPress}
                 />

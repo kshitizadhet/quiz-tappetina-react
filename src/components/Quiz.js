@@ -2,9 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import QuestionList from './QuestionList';
 import Avatars from "./UserAvatar";
-import VideoOne from "./YoutubeVideo";
+import Youtube from "react-youtube";
 
-const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick, handleEnterPress }) => {
+const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick, handleEnterPress, videoId }) => {
+
+    //do this when the video ends
+    function onEnd() {
+        var videoElement = document.getElementsByClassName("youtubeVideo");
+        for(var i = 0; i < videoElement.length; i++) {
+            videoElement[i].style.display = 'none';
+        }
+
+        var quesElement = document.getElementsByClassName('questions');
+        for(var j = 0; j < quesElement.length; j++) {
+            quesElement[j].style.display = 'block';
+        }
+    }
+
     return (
         <div className="wrapper">
             <header>
@@ -24,9 +38,15 @@ const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick, handl
                 </div>
             </header>
 
-            <div className="videos">
-                <VideoOne/>
+            <div className="video">
+                <Youtube
+                    videoId={videoId}
+                    className="youtubeVideo"
+                    id="youtubeVideo"
+                    onEnd={onEnd}
+                />
             </div>
+
 
             <div className="questions">
                 <QuestionList
@@ -45,7 +65,8 @@ Quiz.propTypes = {
     totalQuestions: PropTypes.number.isRequired,
     score: PropTypes.number.isRequired,
     handleAnswerClick: PropTypes.func.isRequired,
-    handleEnterPress: PropTypes.func.isRequired
+    handleEnterPress: PropTypes.func.isRequired,
+    videoId: PropTypes.array.isRequired
 };
 
 export default Quiz;
