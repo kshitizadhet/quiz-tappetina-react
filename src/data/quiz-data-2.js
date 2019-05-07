@@ -2,55 +2,76 @@ import React from 'react';
 
 const QUESTION_DATA_2 = [
     {
-        question: <span>if you are in third place and you pass the guy in second place, what place are you in now?</span>,
+        question: <span>Betty Holberton studied Journalism after quitting:</span>,
         answers: [
-            <span>They're the same thing.</span>,
-            <span>Repaints (or redraws) occur when elements change their visual styles but not layout.</span>,
-            <span>Reflows compute layout, are more performance critical, and occur when elements are inserted, removed, moved, animated, etc.</span>,
-            <span>The previous two answers are correct.</span>
-        ],
-        correct: 3
-    },
-    {
-        question: <span>you have two dogs and three cats, two cats run away, and one dog dies. how many animals are gone?</span>,
-        answers: [
-            <span>Parse Errors, Syntax Errors and Runtime Errors.</span>,
-            <span>Loading Errors, Runtime Errors and Logic Errors.</span>,
-            <span>Syntax Errors, Logic Errors and Loading Errors.</span>,
-            <span>Bad Errors, Very Bad Errors, and Fatal Errors.</span>
+            <span>Computer Science</span>,
+            <span>Mathematics</span>,
+            <span>Bioscience</span>,
+            <span>Physics</span>
         ],
         correct: 1
     },
     {
-        question: <span>if you could chose between two different guys you would pick</span>,
+        question: <span>Betty Holberton's achievements in the field of Computer Science includes:</span>,
         answers: [
-            <span>An inner function that has access to an outer function's variables, even after the outer function has executed.</span>,
-            <span>A stateful function; a function that preserves state.</span>,
-            <span>The combination of a function and the lexical environment within which that function was declared.</span>,
-            <span>All of the above.</span>
+            <span>Early development in COBOL and FORTRAN</span>,
+            <span>Developed the Sort-Merge generator</span>,
+            <span>Developed Breakpoints in debugging</span>,
+            <span>All of the above</span>
         ],
         correct: 3
     },
     {
-        question: <span>the twilight saga has a main character and two side characters. true or false.</span>,
+        question: <span>What happens when a computer program has a bug in it?</span>,
         answers: [
-            <span>When currying or implementing partial application.</span>,
-            <span>To emulate private methods.</span>,
-            <span>In event handlers, timers, and asynchronous callbacks.</span>,
-            <span>All of the above.</span>
+            <span>The program works just fine.</span>,
+            <span>The bug creates additional features in the program.</span>,
+            <span>The program does not work.</span>,
+            <span>None of the above.</span>
         ],
-        correct: 3
+        correct: 2
     },
     {
-        question: <span>buffy is a vampire. true or false.</span>,
+        question: <span>How can a programmer know about possible bugs in their program?</span>,
         answers: [
-            <span>You can use <code>call</code> or <code>apply</code> to borrow methods from other objects.</span>,
-            <span>You can use <code>bind</code> for partial function application.</span>,
-            <span>If you're using the <code>map</code> method to run a function on an array and you need to preserve the <code>this</code> context, you can use <code>bind</code>.</span>,
-            <span>All of the above.</span>
+            <span>The programmer has to check for any possible bugs.</span>,
+            <span>The bugs show themselves when the program runs.</span>,
+            <span>The programmer has to install other software to look for bugs.</span>,
+            <span>The bugs are secretly hidden and cannot be found.</span>
+        ],
+        correct: 0
+    },
+    {
+        question: <span>The main function of a breakpoint is:</span>,
+        answers: [
+            <span>To end the program faster.</span>,
+            <span>To create a bug in the program.</span>,
+            <span>To stop or pause the program at a certain point.</span>,
+            <span>To display errors in the program.</span>
+        ],
+        correct: 2
+    },
+    {
+        question: <span>A breakpoint is:</span>,
+        answers: [
+            <span>A means to understand the program while it is running.</span>,
+            <span>A process to learn about basic debugging ideas in Computer programming.</span>,
+            <span>An unintentional pause in the program.</span>,
+            <span>An environment that makes programming effortless to programmers.</span>
+        ],
+        correct: 0
+    },
+    {
+        question: <span>How many breakpoints can a program have?</span>,
+        answers: [
+            <span>1</span>,
+            <span>2</span>,
+            <span>Maximum 5</span>,
+            <span>Unlimited</span>
         ],
         correct: 3
     }
 ];
+
 
 export default QUESTION_DATA_2;
