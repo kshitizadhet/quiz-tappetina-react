@@ -2,4 +2,4 @@
 
 A simple quiz built in React
 
-[View Demo](http:///)
+[View Demo](http://tappetina-quiz.herokuapp.com/)
