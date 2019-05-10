@@ -12,7 +12,7 @@
     "build": "webpack --config webpack.config.prod.js -p",
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "webpack --mode development --watch",
-    "start": "node abc.js"
+    "start": "node expressServer.js"
   },
   "repository": "kshitizadhet/quiz-tappetina-react",
   "homepage": "https://github.com/kshitizadhet/quiz-tappetina-react",
